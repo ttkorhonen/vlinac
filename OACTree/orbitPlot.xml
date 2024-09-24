@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Procedure name="orbitPlot">
+    <Plugin>libsequencer-ca.dylib</Plugin>
+    <Plugin>libsequencer-control.dylib</Plugin>
+    <Sequence>
+        <AddElement inputVar="bpm1_Z" outputVar="bpmLocations"/>
+        <AddElement inputVar="bpm2_Z" outputVar="bpmLocations"/>
+        <AddElement inputVar="bpm3_Z" outputVar="bpmLocations"/>
+        <AddElement inputVar="bpm4_Z" outputVar="bpmLocations"/>
+        <AddElement inputVar="bpm5_Z" outputVar="bpmLocations"/>
+
+        <WaitForVariables varType="ChannelAccessClient" timeout="5.0"/>
+
+        <AddElement inputVar="bpm1_Y" outputVar="bpmYpos"/>    
+        <AddElement inputVar="bpm2_Y" outputVar="bpmYpos"/>    
+        <AddElement inputVar="bpm3_Y" outputVar="bpmYpos"/>    
+        <AddElement inputVar="bpm4_Y" outputVar="bpmYpos"/>    
+        <AddElement inputVar="bpm5_Y" outputVar="bpmYpos"/>    
+
+
+        <AddElement inputVar="bpm1_X" outputVar="bpmXpos"/>    
+        <AddElement inputVar="bpm2_X" outputVar="bpmXpos"/>    
+        <AddElement inputVar="bpm3_X" outputVar="bpmXpos"/>    
+        <AddElement inputVar="bpm4_X" outputVar="bpmXpos"/>    
+        <AddElement inputVar="bpm5_X" outputVar="bpmXpos"/>    
+
+
+        <Sequence name="init">
+            <Wait timeout="1.0"/>
+        </Sequence>
+        <Output fromVar="bpmLocations"/>
+        <Output fromVar="bpmYpos"/>
+        <Output fromVar="bpmXpos"/>
+        <Copy inputVar="bpmLocations" outputVar="bpmZ" />
+        <Repeat maxCount="-1">
+            <Sequence>
+
+                <Copy inputVar="bpm1_X" outputVar="bpmXpos.[0]" />
+                <Copy inputVar="bpm2_X" outputVar="bpmXpos.[1]" />
+                <Copy inputVar="bpm3_X" outputVar="bpmXpos.[2]" />
+                <Copy inputVar="bpm4_X" outputVar="bpmXpos.[3]" />
+                <Copy inputVar="bpm5_X" outputVar="bpmXpos.[4]" />
+                <Copy inputVar="bpmXpos" outputVar="bpmX" />
+
+
+                <Copy inputVar="bpm1_Y" outputVar="bpmYpos.[0]" />
+                <Copy inputVar="bpm2_Y" outputVar="bpmYpos.[1]" />
+                <Copy inputVar="bpm3_Y" outputVar="bpmYpos.[2]" />
+                <Copy inputVar="bpm4_Y" outputVar="bpmYpos.[3]" />
+                <Copy inputVar="bpm5_Y" outputVar="bpmYpos.[4]" />
+                <Copy inputVar="bpmYpos" outputVar="bpmY" />
+                <Wait timeout="0.2"/>
+            </Sequence>
+        </Repeat>
+
+    </Sequence>
+
+    <Workspace>
+
+        <ChannelAccessClient name="bpmZ" channel="timo:PM:distancesWF"
+                        type='{"type":"array","multiplicity":5,"element":{"type":"float64"}}'/>
+        <ChannelAccessClient name="bpmX" dynamicType="true" channel="timo:PM:xTrajectoryWF"
+                        type='{"type":"array","multiplicity":5,"element":{"type":"float64"}}'/>
+        <ChannelAccessClient name="bpmY" dynamicType="true" channel="timo:PM:yTrajectoryWF"
+                        type='{"type":"array","multiplicity":5,"element":{"type":"float64"}}'/>
+        <ChannelAccessClient name="bend1" channel="timo:BM1:setCurrentC"
+                        type='{"type":"float64"}' />
+        <ChannelAccessClient name="bpm1_Y" channel="timo:PM1:Y:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm2_Y" channel="timo:PM2:Y:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm3_Y" channel="timo:PM3:Y:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm4_Y" channel="timo:PM4:Y:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm5_Y" channel="timo:PM5:Y:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm1_X" channel="timo:PM1:X:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm2_X" channel="timo:PM2:X:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm3_X" channel="timo:PM3:X:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm4_X" channel="timo:PM4:X:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm5_X" channel="timo:PM5:X:positionM" type='{"type":"float64"}'/>
+
+
+        <Local name="true" type='{"type":"bool"}' value='true'/>
+        <Local name="false" type='{"type":"bool"}' value='false'/>
+        <Local name="zero" type='{"type":"float64"}' value='0'/>
+        <Local name="bpmLocations" dynamicType="true" type='{"type":"array","element":{"type":"float64"}}'/>
+        <Local name="bpmYpos" dynamicType="true" type='{"type":"array","element":{"type":"float64"}}'/>
+        <Local name="bpmXpos" dynamicType="true" type='{"type":"array","element":{"type":"float64"}}'/>
+        <Local name="bpm7_Z" type='{"type":"float64"}' value='0.0'/>
+        <Local name="bpm8_Z" type='{"type":"float64"}' value='2.4'/>
+        <Local name="bpm1_Z" type='{"type":"float64"}' value='9.0'/>
+        <Local name="bpm2_Z" type='{"type":"float64"}' value='19.0'/>
+        <Local name="bpm3_Z" type='{"type":"float64"}' value='32.3'/>
+        <Local name="bpm4_Z" type='{"type":"float64"}' value='43.5'/>
+        <Local name="bpm5_Z" type='{"type":"float64"}' value='53.2'/>
+        <Local name="bpm6_Z" type='{"type":"float64"}' value='58.0'/>
+
+    </Workspace>
+</Procedure>

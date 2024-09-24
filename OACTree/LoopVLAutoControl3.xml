@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Procedure>
+    <Plugin>libsequencer-ca.dylib</Plugin>
+    <Plugin>libsequencer-control.dylib</Plugin>
+    <Sequence>
+        <WaitForVariables varType="ChannelAccessClient" timeout="5.0"/>
+        <Repeat maxCount="-1">
+        <Sequence>
+            <Sequence name="init">
+                <WaitForCondition varNames="OpMode" timeout="1e9">
+                    <Equals leftVar="OpMode" rightVar="Manual"/>
+                </WaitForCondition>
+                <Copy inputVar="seqReadyMsg" outputVar="msg"/>
+                <Wait timeout="1.0"/>
+
+                <Copy inputVar="Normal" outputVar="psMode"/>
+    	        <Wait timeout="0.2"/>
+                <Copy inputVar="zero" outputVar="h1A"/>
+                <Copy inputVar="zero" outputVar="v1A"/>
+                <Copy inputVar="zero" outputVar="h2A"/>
+                <Copy inputVar="zero" outputVar="v2A"/>
+                <Copy inputVar="zero" outputVar="h3A"/>
+                <Copy inputVar="zero" outputVar="v3A"/>
+                <Copy inputVar="zero" outputVar="h4A"/>
+                <Copy inputVar="zero" outputVar="v4A"/>
+                <Copy inputVar="zero" outputVar="h5A"/>
+                <Copy inputVar="zero" outputVar="v5A"/>
+
+                <WaitForCondition varNames="OpMode" timeout="1e9">
+                    <Equals leftVar="OpMode" rightVar="AutoStart"/>
+                </WaitForCondition>
+                <Copy inputVar="seqStartMsg" outputVar="msg"/>
+                <Wait timeout="1.0"/>
+                <Copy inputVar="false" outputVar="beamOn" />
+                <Copy inputVar="heaterSet" outputVar="htr"/>
+                <Copy inputVar="WaitHtrMsg" outputVar="msg"/>
+                <Copy inputVar="Ramp" outputVar="psMode"/>
+            </Sequence>
+            <Sequence name="ramp">
+                <WaitForCondition varNames="htrMon" timeout="1e9">
+                    <GreaterThanOrEqual leftVar="htrMon" rightVar="heaterThr"/>
+                </WaitForCondition>
+                <Sequence>
+                    <Output fromVar="htrMon"/>
+                    <Copy inputVar="beamStartMsg" outputVar="msg"/>
+                    <Copy inputVar="true" outputVar="beamOn" />
+                    <Wait timeout="3.0"/>
+                    <Copy inputVar="h1Set" outputVar="h1A"/>
+                    <Copy inputVar="v1Set" outputVar="v1A"/> 
+                    <Wait timeout="3.0"/>
+                    <Copy inputVar="h2Set" outputVar="h2A"/>
+                    <Copy inputVar="v2Set" outputVar="v2A"/>        
+                    <Wait timeout="3.0"/>
+                    <Copy inputVar="true" outputVar="gv1"/>
+                    <Wait timeout="5.0"/>
+                    <Copy inputVar="h3Set" outputVar="h3A"/>
+                    <Copy inputVar="v3Set" outputVar="v3A"/>        
+                    <Wait timeout="3.0"/>
+                    <Copy inputVar="h4Set" outputVar="h4A"/>
+                    <Copy inputVar="v4Set" outputVar="v4A"/>        
+                    <Wait timeout="3.0"/>
+                    <Copy inputVar="h5Set" outputVar="h5A"/>
+                    <Copy inputVar="v5Set" outputVar="v5A"/>  
+                    <Wait timeout="5.0"/>
+                    <Copy inputVar="seqDoneMsg" outputVar="msg"/> 
+                    <Copy inputVar="Init" outputVar="psMode"/>
+
+                </Sequence>  
+            </Sequence>
+            </Sequence>
+        </Repeat>
+    </Sequence>
+    <Workspace>
+        <ChannelAccessClient name="OpMode" channel="timo:autoC"
+                        type='{"type":"bool"}' />
+        <ChannelAccessClient name="htrMon" channel="timo:cathodeTempM"
+                        type='{"type":"float64"}' />
+        <ChannelAccessClient name="msg" channel="timo:OP:autoMsg"
+                        type='{"type":"string"}' />
+         <ChannelAccessClient name="htr" channel="timoA:cathodeCurrentC"
+                        type='{"type":"float64"}' />
+        <ChannelAccessClient name="beamOn" channel="timo:gunOnC"
+                        type='{"type":"bool"}' />
+        <ChannelAccessClient name="gv1" channel="timo:GV1:positionC"
+                        type='{"type":"bool"}' />
+        <ChannelAccessClient name="psMode" channel="timo:psNormalModeC"
+                        type='{"type":"bool"}' />
+         <ChannelAccessClient name="h1A" channel="timoA:H1:setCurrentC"
+                        type='{"type":"float64"}' />
+         <ChannelAccessClient name="v1A" channel="timoA:V1:setCurrentC"
+                        type='{"type":"float64"}' />
+         <ChannelAccessClient name="h2A" channel="timoA:H2:setCurrentC"
+                        type='{"type":"float64"}' />
+         <ChannelAccessClient name="v2A" channel="timoA:V2:setCurrentC"
+                        type='{"type":"float64"}' />
+         <ChannelAccessClient name="h3A" channel="timoA:H3:setCurrentC"
+                        type='{"type":"float64"}' />
+         <ChannelAccessClient name="v3A" channel="timoA:V3:setCurrentC"
+                        type='{"type":"float64"}' />
+         <ChannelAccessClient name="h4A" channel="timoA:H4:setCurrentC"
+                        type='{"type":"float64"}' />
+         <ChannelAccessClient name="v4A" channel="timoA:V4:setCurrentC"
+                        type='{"type":"float64"}' />
+         <ChannelAccessClient name="h5A" channel="timoA:H5:setCurrentC"
+                        type='{"type":"float64"}' />
+         <ChannelAccessClient name="v5A" channel="timoA:V5:setCurrentC"
+                        type='{"type":"float64"}' />
+        <Local name="true" type='{"type":"bool"}' value='true'/>
+        <Local name="false" type='{"type":"bool"}' value='false'/>
+        <Local name="zero" type='{"type":"float64"}' value='0'/>
+        <Local name="State" type='{"type":"int32"}' value='0' />
+        <Local name="Normal" type='{"type":"int32"}' value='1' />
+        <Local name="Ramp" type='{"type":"int32"}' value='0' />
+        <Local name="Init" type='{"type":"int32"}' value='1' />   
+        <Local name="AutoStart" type='{"type":"int32"}' value='1' />  
+        <Local name="Manual" type='{"type":"int32"}' value='0' />       
+        <Local name="waitForAuto" type='{"type":"int32"}' value='1' />
+        <Local name="waitForHtr" type='{"type":"int32"}' value='2' />
+        <Local name="heaterSet" type='{"type":"float64"}' value='12.3'/> 
+        <Local name="heaterThr" type='{"type":"float64"}' value='152.0'/>
+        <Local name="h1Set" type='{"type":"float64"}' value='-1.31'/>
+        <Local name="v1Set" type='{"type":"float64"}' value='1.79'/>
+        <Local name="h2Set" type='{"type":"float64"}' value='2.67'/>
+        <Local name="v2Set" type='{"type":"float64"}' value='-1.39'/>
+        <Local name="h3Set" type='{"type":"float64"}' value='-1.68'/>
+        <Local name="v3Set" type='{"type":"float64"}' value='-0.8'/>
+        <Local name="h4Set" type='{"type":"float64"}' value='1.63'/>
+        <Local name="v4Set" type='{"type":"float64"}' value='0.1'/>
+        <Local name="h5Set" type='{"type":"float64"}' value='-1.83'/>
+        <Local name="v5Set" type='{"type":"float64"}' value='2.21'/>
+        <Local name="initMsg" type='{"type":"string"}' value='"Initialized"'/>
+        <Local name="beamStartMsg" type='{"type":"string"}' value='"Turning Beam On"'/>
+        <Local name="WaitHtrMsg" type='{"type":"string"}' value='"Cathode heating up"'/>
+        <Local name="seqReadyMsg" type='{"type":"string"}' value='"Sequencer ready"'/>
+        <Local name="seqStartMsg" type='{"type":"string"}' value='"Starting"'/>
+        <Local name="seqDoneMsg" type='{"type":"string"}' value='"Sequence is complete"'/>
+        </Workspace>
+</Procedure>
