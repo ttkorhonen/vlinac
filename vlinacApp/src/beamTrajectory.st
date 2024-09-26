@@ -87,7 +87,7 @@ assign  yPosWf to "{user}:PM:yTrajectoryWF";
 double   iWf[8];
 assign  iWf to "{user}:PM:iTrajectoryWF";
 
-double   bpmLocations[8];
+double   bpmLocations[6];
 assign  bpmLocations to "{user}:PM:distancesWF";
 
 double   refLocations[2];
@@ -99,7 +99,7 @@ assign  refHi to "{user}:PM:referenceHiWF";
 double   refLo[2];
 assign  refLo to "{user}:PM:referenceLoWF";
 
-double   bpmFixedLocations[13];
+double   bpmFixedLocations[6];
 
 short   i;	/* index into LI waveforms */
 short   cBpm;		/* bpm under consideration */
@@ -115,15 +115,13 @@ state init
             pvPut(seqRunning);
 
             /* BPM Position from EGUN */
-            bpmFixedLocations[0] =  0.0; 
-            bpmFixedLocations[1] =  2.4; 
-            bpmFixedLocations[2] =  9.0; 
-            bpmFixedLocations[3] =  20.0; 
-            bpmFixedLocations[4] =  33.0;
-            bpmFixedLocations[5] =  44.0; 
-            bpmFixedLocations[6] =  54,5; 
-            bpmFixedLocations[7] =  58.0; 
 
+            bpmFixedLocations[0] =  9.0; 
+            bpmFixedLocations[1] =  19.0; 
+            bpmFixedLocations[2] =  32.3;
+            bpmFixedLocations[3] =  43.5; 
+            bpmFixedLocations[4] =  53.2; 
+            bpmFixedLocations[5] =  58.0; 
             refLocations[0] = 0; 
             refLocations[1] = 60;
             pvPut(refLocations);
@@ -151,14 +149,15 @@ state plot
   {
         when()
             {
-               i=7;
-               cBpm=7;
+               i=5;
+               cBpm=5;
             /* include reading if > threshold */ 
             if (FC1_I > 1.0) {
                xPosWf[i] = PM5_X;
                yPosWf[i] = PM5_Y;
                iWf[i]    = FC1_I;
                bpmLocations[i] = bpmFixedLocations[cBpm];
+               printf("%f \n", bpmLocations[i]);
                i--;
             }
             else if(FC2_I > 1.0) {
@@ -182,7 +181,7 @@ state plot
                xPosWf[i] = PM5_X;
                yPosWf[i] = PM5_Y;
                iWf[i]    = PM5_I;
-               bpmLocations[i] = bpmFixedLocations[cBpm];
+               bpmLocations[i] = bpmFixedLocations[5];
                i--;
             }
             cBpm--;
@@ -221,30 +220,6 @@ state plot
                bpmLocations[i] = bpmFixedLocations[cBpm];
                i--;
             }
-
-            cBpm--;
-            if (CM1_I > 1.0) {
-               xPosWf[i] = 0; 
-               yPosWf[i] = 0; 
-               iWf[i]    = CM1_I; 
-               bpmLocations[i] = bpmFixedLocations[cBpm];
-               i--;
-               xPosWf[i] = 0; 
-               yPosWf[i] = 0; 
-               iWf[i]    = CM1_I; 
-               bpmLocations[i] = bpmFixedLocations[cBpm-1];
-               i--;
-            }
-            
-            /* fill in unplotted points on top of last point */
-            while (i>=0)
-               {
-               xPosWf[i] = 0;
-               yPosWf[i] = 0;
-               iWf[i]    = CM1_I;
-               bpmLocations[i] = 0;
-               i--;
-               }
 
             pvPut(xPosWf);
             pvPut(yPosWf);

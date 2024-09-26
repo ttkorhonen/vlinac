@@ -11,6 +11,14 @@ DBD += vlinac.dbd
 
 vlinac_DBD = base.dbd
 
+# include QSRV
+vlinac_DBD += PVAServerRegister.dbd
+vlinac_DBD += qsrv.dbd
+vlinac_LIBS += qsrv
+vlinac_LIBS += $(EPICS_BASE_PVA_CORE_LIBS)
+
+
+
 vlinac_SRCS += vlinac_registerRecordDeviceDriver.cpp
 vlinac_SRCS_DEFAULT += vlinacMain.cpp
 vlinac_SRCS_vxWorks += -nil-

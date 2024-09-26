@@ -1,0 +1,13 @@
+#RELEASE Location of external products
+# Run "gnumake clean uninstall install" in the application
+# top directory each time this file is changed.
+
+# To use the sequencer, point SNCSEQ at its top directory:
+SNCSEQ=N:/epics/modules/soft/seq
+
+# EPICS_BASE usually appears last so other apps can override stuff:
+EPICS_BASE=N:/epics/base314
+
+# Extensions, to include binaries of medm etc.
+# Uncomment this and see installApp/Makefile
+EPICS_EXTENSIONS=N:/epics/extensions
