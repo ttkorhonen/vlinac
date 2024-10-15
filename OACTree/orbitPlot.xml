@@ -57,7 +57,7 @@
 
     <Workspace>
 
-        <ChannelAccessClient name="bpmZ" channel="timo:PM:distancesWF"
+        <ChannelAccessClient name="bpmZ" dynamicType="true" channel="timo:PM:distancesWF"
                         type='{"type":"array","multiplicity":5,"element":{"type":"float64"}}'/>
         <ChannelAccessClient name="bpmX" dynamicType="true" channel="timo:PM:xTrajectoryWF"
                         type='{"type":"array","multiplicity":5,"element":{"type":"float64"}}'/>
@@ -83,8 +83,6 @@
         <Local name="bpmLocations" dynamicType="true" type='{"type":"array","element":{"type":"float64"}}'/>
         <Local name="bpmYpos" dynamicType="true" type='{"type":"array","element":{"type":"float64"}}'/>
         <Local name="bpmXpos" dynamicType="true" type='{"type":"array","element":{"type":"float64"}}'/>
-        <Local name="bpm7_Z" type='{"type":"float64"}' value='0.0'/>
-        <Local name="bpm8_Z" type='{"type":"float64"}' value='2.4'/>
         <Local name="bpm1_Z" type='{"type":"float64"}' value='9.0'/>
         <Local name="bpm2_Z" type='{"type":"float64"}' value='19.0'/>
         <Local name="bpm3_Z" type='{"type":"float64"}' value='32.3'/>

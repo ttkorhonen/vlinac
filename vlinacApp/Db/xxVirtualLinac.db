@@ -729,7 +729,7 @@ record(calc,"$(user):FC2:intensityM") {
 record(waveform,"$(user):PM:distancesWF") {
         field(DESC,"bpm distances from gun")
         field(DTYP,"Soft Channel")
-        field(INP,"[9.0,20.0,33.0,44.0,54.5,58.0]")
+        field(INP,"[9.0,20.0,33.0,44.0,54.5]")
         field(PINI,"YES")
         field(EGU,"meters")
         field(HOPR,"60")
