@@ -57,11 +57,11 @@
 
     <Workspace>
 
-        <ChannelAccessClient name="bpmZ" dynamicType="true" channel="timo:PM:distancesWF"
+        <ChannelAccessClient name="bpmZ" channel="timo:PM:distancesWF"
                         type='{"type":"array","multiplicity":5,"element":{"type":"float64"}}'/>
-        <ChannelAccessClient name="bpmX" dynamicType="true" channel="timo:PM:xTrajectoryWF"
+        <ChannelAccessClient name="bpmX" channel="timo:PM:xTrajectoryWF"
                         type='{"type":"array","multiplicity":5,"element":{"type":"float64"}}'/>
-        <ChannelAccessClient name="bpmY" dynamicType="true" channel="timo:PM:yTrajectoryWF"
+        <ChannelAccessClient name="bpmY" channel="timo:PM:yTrajectoryWF"
                         type='{"type":"array","multiplicity":5,"element":{"type":"float64"}}'/>
         <ChannelAccessClient name="bend1" channel="timo:BM1:setCurrentC"
                         type='{"type":"float64"}' />
