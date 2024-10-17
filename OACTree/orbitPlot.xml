@@ -57,24 +57,24 @@
 
     <Workspace>
 
-        <ChannelAccessClient name="bpmZ" channel="timo:PM:distancesWF"
+        <ChannelAccessClient name="bpmZ" channel="timokorhonen:PM:distancesWF"
                         type='{"type":"array","multiplicity":5,"element":{"type":"float64"}}'/>
-        <ChannelAccessClient name="bpmX" channel="timo:PM:xTrajectoryWF"
+        <ChannelAccessClient name="bpmX" channel="timokorhonen:PM:xTrajectoryWF"
                         type='{"type":"array","multiplicity":5,"element":{"type":"float64"}}'/>
-        <ChannelAccessClient name="bpmY" channel="timo:PM:yTrajectoryWF"
+        <ChannelAccessClient name="bpmY" channel="timokorhonen:PM:yTrajectoryWF"
                         type='{"type":"array","multiplicity":5,"element":{"type":"float64"}}'/>
-        <ChannelAccessClient name="bend1" channel="timo:BM1:setCurrentC"
+        <ChannelAccessClient name="bend1" channel="timokorhonen:BM1:setCurrentC"
                         type='{"type":"float64"}' />
-        <ChannelAccessClient name="bpm1_Y" channel="timo:PM1:Y:positionM" type='{"type":"float64"}'/>
-        <ChannelAccessClient name="bpm2_Y" channel="timo:PM2:Y:positionM" type='{"type":"float64"}'/>
-        <ChannelAccessClient name="bpm3_Y" channel="timo:PM3:Y:positionM" type='{"type":"float64"}'/>
-        <ChannelAccessClient name="bpm4_Y" channel="timo:PM4:Y:positionM" type='{"type":"float64"}'/>
-        <ChannelAccessClient name="bpm5_Y" channel="timo:PM5:Y:positionM" type='{"type":"float64"}'/>
-        <ChannelAccessClient name="bpm1_X" channel="timo:PM1:X:positionM" type='{"type":"float64"}'/>
-        <ChannelAccessClient name="bpm2_X" channel="timo:PM2:X:positionM" type='{"type":"float64"}'/>
-        <ChannelAccessClient name="bpm3_X" channel="timo:PM3:X:positionM" type='{"type":"float64"}'/>
-        <ChannelAccessClient name="bpm4_X" channel="timo:PM4:X:positionM" type='{"type":"float64"}'/>
-        <ChannelAccessClient name="bpm5_X" channel="timo:PM5:X:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm1_Y" channel="timokorhonen:PM1:Y:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm2_Y" channel="timokorhonen:PM2:Y:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm3_Y" channel="timokorhonen:PM3:Y:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm4_Y" channel="timokorhonen:PM4:Y:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm5_Y" channel="timokorhonen:PM5:Y:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm1_X" channel="timokorhonen:PM1:X:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm2_X" channel="timokorhonen:PM2:X:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm3_X" channel="timokorhonen:PM3:X:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm4_X" channel="timokorhonen:PM4:X:positionM" type='{"type":"float64"}'/>
+        <ChannelAccessClient name="bpm5_X" channel="timokorhonen:PM5:X:positionM" type='{"type":"float64"}'/>
 
 
         <Local name="true" type='{"type":"bool"}' value='true'/>
