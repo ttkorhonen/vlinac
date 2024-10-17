@@ -11,6 +11,6 @@ iocInit()
 ## Start the sequence programs.  These will give an error if
 ## SNCSEQ is not defined, but won't stop the database from working
 #seq &beamTrajectory, user=${USER}
-seq &autoControl, user=${USER}
-seq &stabilizer, user=${USER}
+#seq &autoControl, user=${USER}
+#seq &stabilizer, user=${USER}
 

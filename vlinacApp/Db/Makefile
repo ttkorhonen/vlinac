@@ -10,8 +10,8 @@ include $(TOP)/configure/CONFIG
 #----------------------------------------------------
 # Create and install (or just install)
 # databases, templates, substitutions like this
-DB += xxVirtualLinac.vdb
-DB += xxMedmDemo.db
+DB += xxVirtualLinac.db
+#DB += xxMedmDemo.db
 
 #----------------------------------------------------
 # If <anyname>.db template is not named <anyname>*.template add
