@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Procedure>
-    <Plugin>libsequencer-pvxs.dylib</Plugin>
-    <Plugin>libsequencer-control.dylib</Plugin>
+    <Plugin>libsequencer-pvxs.$(libext=so)</Plugin>
+    <Plugin>libsequencer-control.$(libext=so)</Plugin>
     <Sequence>
         <WaitForVariables varType="PvAccessClient" timeout="5.0"/>
         <Repeat maxCount="-1">
@@ -73,23 +73,23 @@
         </Repeat>
     </Sequence>
     <Workspace>
-        <PvAccessClient name="OpMode" channel="$(user=timokorhonen):autoC" />
-        <PvAccessClient name="htrMon" channel="$(user=timokorhonen):cathodeTempM" />
-        <PvAccessClient name="msg" channel="$(user=timokorhonen):OP:autoMsg"/>
-        <PvAccessClient name="htr" channel="$(user=timokorhonen)A:cathodeCurrentC" />
-        <PvAccessClient name="beamOn" channel="$(user=timokorhonen):gunOnC" />
-        <PvAccessClient name="gv1" channel="$(user=timokorhonen):GV1:positionC" />
-        <PvAccessClient name="psMode" channel="$(user=timokorhonen):psNormalModeC" />
-        <PvAccessClient name="h1A" channel="$(user=timokorhonen)A:H1:setCurrentC" />
-        <PvAccessClient name="v1A" channel="$(user=timokorhonen)A:V1:setCurrentC" />
-        <PvAccessClient name="h2A" channel="$(user=timokorhonen)A:H2:setCurrentC" />
-        <PvAccessClient name="v2A" channel="$(user=timokorhonen)A:V2:setCurrentC" />
-        <PvAccessClient name="h3A" channel="$(user=timokorhonen)A:H3:setCurrentC" />
-        <PvAccessClient name="v3A" channel="$(user=timokorhonen)A:V3:setCurrentC" />
-        <PvAccessClient name="h4A" channel="$(user=timokorhonen)A:H4:setCurrentC" />
-        <PvAccessClient name="v4A" channel="$(user=timokorhonen)A:V4:setCurrentC" />
-        <PvAccessClient name="h5A" channel="$(user=timokorhonen)A:H5:setCurrentC" />
-        <PvAccessClient name="v5A" channel="$(user=timokorhonen)A:V5:setCurrentC" />
+        <PvAccessClient name="OpMode" channel="$(user=test):autoC" />
+        <PvAccessClient name="htrMon" channel="$(user=test):cathodeTempM" />
+        <PvAccessClient name="msg" channel="$(user=test):OP:autoMsg"/>
+        <PvAccessClient name="htr" channel="$(user=test)A:cathodeCurrentC" />
+        <PvAccessClient name="beamOn" channel="$(user=test):gunOnC" />
+        <PvAccessClient name="gv1" channel="$(user=test):GV1:positionC" />
+        <PvAccessClient name="psMode" channel="$(user=test):psNormalModeC" />
+        <PvAccessClient name="h1A" channel="$(user=test)A:H1:setCurrentC" />
+        <PvAccessClient name="v1A" channel="$(user=test)A:V1:setCurrentC" />
+        <PvAccessClient name="h2A" channel="$(user=test)A:H2:setCurrentC" />
+        <PvAccessClient name="v2A" channel="$(user=test)A:V2:setCurrentC" />
+        <PvAccessClient name="h3A" channel="$(user=test)A:H3:setCurrentC" />
+        <PvAccessClient name="v3A" channel="$(user=test)A:V3:setCurrentC" />
+        <PvAccessClient name="h4A" channel="$(user=test)A:H4:setCurrentC" />
+        <PvAccessClient name="v4A" channel="$(user=test)A:V4:setCurrentC" />
+        <PvAccessClient name="h5A" channel="$(user=test)A:H5:setCurrentC" />
+        <PvAccessClient name="v5A" channel="$(user=test)A:V5:setCurrentC" />
         <Local name="true" type='{"type":"int32"}' value='true'/>
         <Local name="false" type='{"type":"int32"}' value='false'/>
         <Local name="zero" type='{"type":"float64"}' value='0'/>
