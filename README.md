@@ -43,11 +43,11 @@ processing the `.template` files, like this:
 
 on Linux:
 
-`msi -M user=$USER, VLAutoControlCA.template -o <output file name>`
+`msi -M user=$USER -o <output file name> VLAutoControlCA.template `
 
 on MacOS:
 
-`msi -M user=$USER,libext=dylib VLAutoControlCA.template -o <output file name>`
+`msi -M user=$USER,libext=dylib  -o <output file name> VLAutoControlCA.template`
 
 The dylib macro changes the library file extension. It is set to `so` by default,
 as it is expected that these are mostly run on Linux.
@@ -85,6 +85,10 @@ in the top of the vlinac application  (on the Mac this is called
 'startIoc.command' and can just be double-clicked in the Finder).
 Other start scripts are also provided to run the channel access
 client tools included with the application.
+
+Run the OACTree scripts with;
+
+`sequencer-cli -f <your sequence>`
 
 The file documentation/Virtual_Linac_Info.pdf provides a description
 of how to use the Virtual Linac application once the IOC is running.
