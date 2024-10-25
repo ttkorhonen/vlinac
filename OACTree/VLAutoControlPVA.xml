@@ -73,23 +73,23 @@
         </Repeat>
     </Sequence>
     <Workspace>
-        <PvAccessClient name="OpMode" channel="timokorhonen:autoC" />
-        <PvAccessClient name="htrMon" channel="timokorhonen:cathodeTempM" />
-        <PvAccessClient name="msg" channel="timokorhonen:OP:autoMsg"/>
-        <PvAccessClient name="htr" channel="timokorhonenA:cathodeCurrentC" />
-        <PvAccessClient name="beamOn" channel="timokorhonen:gunOnC" />
-        <PvAccessClient name="gv1" channel="timokorhonen:GV1:positionC" />
-        <PvAccessClient name="psMode" channel="timokorhonen:psNormalModeC" />
-        <PvAccessClient name="h1A" channel="timokorhonenA:H1:setCurrentC" />
-        <PvAccessClient name="v1A" channel="timokorhonenA:V1:setCurrentC" />
-        <PvAccessClient name="h2A" channel="timokorhonenA:H2:setCurrentC" />
-        <PvAccessClient name="v2A" channel="timokorhonenA:V2:setCurrentC" />
-        <PvAccessClient name="h3A" channel="timokorhonenA:H3:setCurrentC" />
-        <PvAccessClient name="v3A" channel="timokorhonenA:V3:setCurrentC" />
-        <PvAccessClient name="h4A" channel="timokorhonenA:H4:setCurrentC" />
-        <PvAccessClient name="v4A" channel="timokorhonenA:V4:setCurrentC" />
-        <PvAccessClient name="h5A" channel="timokorhonenA:H5:setCurrentC" />
-        <PvAccessClient name="v5A" channel="timokorhonenA:V5:setCurrentC" />
+        <PvAccessClient name="OpMode" channel="test:autoC" />
+        <PvAccessClient name="htrMon" channel="test:cathodeTempM" />
+        <PvAccessClient name="msg" channel="test:OP:autoMsg"/>
+        <PvAccessClient name="htr" channel="testA:cathodeCurrentC" />
+        <PvAccessClient name="beamOn" channel="test:gunOnC" />
+        <PvAccessClient name="gv1" channel="test:GV1:positionC" />
+        <PvAccessClient name="psMode" channel="test:psNormalModeC" />
+        <PvAccessClient name="h1A" channel="testA:H1:setCurrentC" />
+        <PvAccessClient name="v1A" channel="testA:V1:setCurrentC" />
+        <PvAccessClient name="h2A" channel="testA:H2:setCurrentC" />
+        <PvAccessClient name="v2A" channel="testA:V2:setCurrentC" />
+        <PvAccessClient name="h3A" channel="testA:H3:setCurrentC" />
+        <PvAccessClient name="v3A" channel="testA:V3:setCurrentC" />
+        <PvAccessClient name="h4A" channel="testA:H4:setCurrentC" />
+        <PvAccessClient name="v4A" channel="testA:V4:setCurrentC" />
+        <PvAccessClient name="h5A" channel="testA:H5:setCurrentC" />
+        <PvAccessClient name="v5A" channel="testA:V5:setCurrentC" />
         <Local name="true" type='{"type":"int32"}' value='true'/>
         <Local name="false" type='{"type":"int32"}' value='false'/>
         <Local name="zero" type='{"type":"float64"}' value='0'/>

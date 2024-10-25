@@ -3,7 +3,6 @@ dbLoadDatabase dbd/vlinac.dbd
 vlinac_registerRecordDeviceDriver(pdbbase)
 
 ## Load record instances
-#dbLoadRecords vlinacApp/db/xxMedmDemo.db, user=${USER}
 dbLoadRecords vlinacApp/Db/xxVirtualLinac.db, user=${USER}
 
 iocInit()

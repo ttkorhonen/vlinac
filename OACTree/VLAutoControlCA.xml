@@ -71,39 +71,39 @@
         </Repeat>
     </Sequence>
     <Workspace>
-        <ChannelAccessClient name="OpMode" channel="timokorhonen:autoC"
+        <ChannelAccessClient name="OpMode" channel="test:autoC"
                         type='{"type":"bool"}' />
-        <ChannelAccessClient name="htrMon" channel="timokorhonen:cathodeTempM"
+        <ChannelAccessClient name="htrMon" channel="test:cathodeTempM"
                         type='{"type":"float64"}' />
-        <ChannelAccessClient name="msg" channel="timokorhonen:OP:autoMsg"
+        <ChannelAccessClient name="msg" channel="test:OP:autoMsg"
                         type='{"type":"string"}' />
-         <ChannelAccessClient name="htr" channel="timokorhonenA:cathodeCurrentC"
+         <ChannelAccessClient name="htr" channel="testA:cathodeCurrentC"
                         type='{"type":"float64"}' />
-        <ChannelAccessClient name="beamOn" channel="timokorhonen:gunOnC"
+        <ChannelAccessClient name="beamOn" channel="test:gunOnC"
                         type='{"type":"bool"}' />
-        <ChannelAccessClient name="gv1" channel="timokorhonen:GV1:positionC"
+        <ChannelAccessClient name="gv1" channel="test:GV1:positionC"
                         type='{"type":"bool"}' />
-        <ChannelAccessClient name="psMode" channel="timokorhonen:psNormalModeC"
+        <ChannelAccessClient name="psMode" channel="test:psNormalModeC"
                         type='{"type":"bool"}' />
-         <ChannelAccessClient name="h1A" channel="timokorhonenA:H1:setCurrentC"
+         <ChannelAccessClient name="h1A" channel="testA:H1:setCurrentC"
                         type='{"type":"float64"}' />
-         <ChannelAccessClient name="v1A" channel="timokorhonenA:V1:setCurrentC"
+         <ChannelAccessClient name="v1A" channel="testA:V1:setCurrentC"
                         type='{"type":"float64"}' />
-         <ChannelAccessClient name="h2A" channel="timokorhonenA:H2:setCurrentC"
+         <ChannelAccessClient name="h2A" channel="testA:H2:setCurrentC"
                         type='{"type":"float64"}' />
-         <ChannelAccessClient name="v2A" channel="timokorhonenA:V2:setCurrentC"
+         <ChannelAccessClient name="v2A" channel="testA:V2:setCurrentC"
                         type='{"type":"float64"}' />
-         <ChannelAccessClient name="h3A" channel="timokorhonenA:H3:setCurrentC"
+         <ChannelAccessClient name="h3A" channel="testA:H3:setCurrentC"
                         type='{"type":"float64"}' />
-         <ChannelAccessClient name="v3A" channel="timokorhonenA:V3:setCurrentC"
+         <ChannelAccessClient name="v3A" channel="testA:V3:setCurrentC"
                         type='{"type":"float64"}' />
-         <ChannelAccessClient name="h4A" channel="timokorhonenA:H4:setCurrentC"
+         <ChannelAccessClient name="h4A" channel="testA:H4:setCurrentC"
                         type='{"type":"float64"}' />
-         <ChannelAccessClient name="v4A" channel="timokorhonenA:V4:setCurrentC"
+         <ChannelAccessClient name="v4A" channel="testA:V4:setCurrentC"
                         type='{"type":"float64"}' />
-         <ChannelAccessClient name="h5A" channel="timokorhonenA:H5:setCurrentC"
+         <ChannelAccessClient name="h5A" channel="testA:H5:setCurrentC"
                         type='{"type":"float64"}' />
-         <ChannelAccessClient name="v5A" channel="timokorhonenA:V5:setCurrentC"
+         <ChannelAccessClient name="v5A" channel="testA:V5:setCurrentC"
                         type='{"type":"float64"}' />
         <Local name="true" type='{"type":"bool"}' value='true'/>
         <Local name="false" type='{"type":"bool"}' value='false'/>
