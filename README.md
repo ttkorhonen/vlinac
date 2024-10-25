@@ -17,7 +17,7 @@ If you have an EPICS Base 7.0.x built somewhere, you can just do
  
 `$softIocPVA -m user=<what you prefer> -d vlinacApp/Db/xxVirtualLinac.db`
  
-To get the IOC going.
+to get the IOC going.
 The sequencers are not needed; the OACTree scripts will do the job.
 
 If you prefer, you can also build the IOC. Edit `configure/RELEASE.local` to match your setup
@@ -49,12 +49,12 @@ on MacOS:
 
 `msi -M user=$USER,libext=dylib  -o <output file name> VLAutoControlCA.template`
 
-The dylib macro changes the library file extension. It is set to `so` by default,
+The libext macro changes the library file extension. It is set to `so` by default,
 as it is expected that these are mostly run on Linux.
 
 Similarly, for PVA
 
-`msi -M user=$USER, VLAutoControlPVA.template -o <output file name>`
+`msi -M user=$USER, VLAutoControlPVA.template -o <output file name>` (Linux)
 
 ### Editing the xml files
 
