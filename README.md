@@ -90,8 +90,25 @@ Run the OACTree scripts with;
 
 `sequencer-cli -f <your sequence>`
 
+If you want to skip creating (temporary) xml files, at least on Linux and MacOS 
+the following should work:
+
+`msi -M user=$USER,libext=dylib orbitPlot.template | sequencer-cli -f /dev/stdin` (Mac)
+`msi -M user=$USER orbitPlot.template | sequencer-cli -f /dev/stdin` (Linux)
+
 The file documentation/Virtual_Linac_Info.pdf provides a description
 of how to use the Virtual Linac application once the IOC is running.
+
+However, in short:
+
+When the OACTree sequencer(s) are running, you should see a message "Sequencer ready" in the
+text box on the OPI. Then, pressing "Auto-Start" in the upper right corner starts running the setup.
+It goes through the actions, and finally the beam reaches the target, and the message 
+"Sequence is complete" will be displayed in the text box. Switching to "Manual Control" re-arms the sequence,
+and the "Reset" button restores the initial state of the linac.
+
+In manual mode, you can try yourself to thread beam through the linac. Even if this is a simplified demo,
+it is surprisingly complex to find out a good sequence of actions.
 
 ```{note} Running on Windows
 This has not yet been tested on Windows. 
