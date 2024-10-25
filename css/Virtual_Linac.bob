@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--Saved on 2024-06-04 08:45:57 by timo-->
+<!--Saved on 2024-10-25 10:01:05 by timokorhonen-->
 <display version="2.0.0">
   <name>Virtual Linac</name>
   <macros>
-    <user>timo</user>
+    <user>$(USER)</user>
   </macros>
   <x>58</x>
   <y>85</y>
@@ -23,6 +23,29 @@
   </scripts>
   <grid_step_x>2</grid_step_x>
   <grid_step_y>2</grid_step_y>
+  <widget type="ellipse" version="2.0.0">
+    <name>Ellipse_2</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>859</x>
+    <y>694</y>
+    <width>50</width>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="128" green="0" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="0">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle</name>
     <macros>
@@ -61,7 +84,7 @@ $(pv_value)</tooltip>
     <name>Thermometer</name>
     <pv_name>$(user):cathodeTempM</pv_name>
     <x>21</x>
-    <y>52</y>
+    <y>75</y>
     <width>97</width>
     <height>156</height>
     <fill_color>
@@ -99,9 +122,9 @@ $(pv_value)</tooltip>
     <name>Menu Button</name>
     <actions>
       <action type="open_display">
+        <description>Cathode Strip Chart</description>
         <file>cathodeStrip.opi</file>
         <target>tab</target>
-        <description>Cathode Strip Chart</description>
       </action>
     </actions>
     <text></text>
@@ -3601,321 +3624,6 @@ $(pv_value)</tooltip>
     <tooltip>$(pv_name)
 $(pv_value)</tooltip>
   </widget>
-  <widget type="group" version="3.0.0">
-    <name>Grouping Container</name>
-    <x>588</x>
-    <y>157</y>
-    <width>105</width>
-    <height>8</height>
-    <style>3</style>
-    <foreground_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </foreground_color>
-    <line_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </line_color>
-    <background_color>
-      <color red="235" green="241" blue="181">
-      </color>
-    </background_color>
-    <actions>
-    </actions>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <x>3</x>
-      <width>2</width>
-      <height>7</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="0" green="0" blue="255">
-        </color>
-      </background_color>
-      <transparent>true</transparent>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <y>1</y>
-      <width>3</width>
-      <height>6</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="0" green="0" blue="255">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <x>101</x>
-      <width>2</width>
-      <height>7</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="0" green="0" blue="255">
-        </color>
-      </background_color>
-      <transparent>true</transparent>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <x>101</x>
-      <width>3</width>
-      <height>6</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="0" green="0" blue="255">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <x>102</x>
-      <y>2</y>
-      <width>3</width>
-      <height>4</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="0" green="0" blue="255">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Grouping Container</name>
-    <x>720</x>
-    <y>159</y>
-    <width>106</width>
-    <height>8</height>
-    <style>3</style>
-    <foreground_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </foreground_color>
-    <line_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </line_color>
-    <background_color>
-      <color red="235" green="241" blue="181">
-      </color>
-    </background_color>
-    <actions>
-    </actions>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <x>4</x>
-      <width>98</width>
-      <height>8</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="0" green="0" blue="255">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <x>4</x>
-      <width>98</width>
-      <height>6</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="0" green="0" blue="255">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <x>4</x>
-      <y>1</y>
-      <width>98</width>
-      <height>4</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="0" green="0" blue="255">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <x>3</x>
-      <width>2</width>
-      <height>7</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="0" green="0" blue="255">
-        </color>
-      </background_color>
-      <transparent>true</transparent>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <y>1</y>
-      <width>3</width>
-      <height>6</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="0" green="0" blue="255">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <x>100</x>
-      <width>2</width>
-      <height>7</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="0" green="0" blue="255">
-        </color>
-      </background_color>
-      <transparent>true</transparent>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <x>103</x>
-      <y>1</y>
-      <width>3</width>
-      <height>6</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="0" green="0" blue="255">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-  </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <text>H1/V1</text>
@@ -5023,11 +4731,11 @@ $(pv_value)</tooltip>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
-    <text>Cathode</text>
-    <x>48</x>
-    <y>26</y>
-    <width>42</width>
-    <height>14</height>
+    <text>Cathode Temperature</text>
+    <x>36</x>
+    <y>17</y>
+    <width>92</width>
+    <height>13</height>
     <font>
       <font family="" style="BOLD" size="9.900990099009901">
       </font>
@@ -5148,7 +4856,7 @@ $(pv_value)</tooltip>
     <x>907</x>
     <y>136</y>
     <width>13</width>
-    <height>11</height>
+    <height>10</height>
     <font>
       <font family="Lucida Grande" style="REGULAR" size="7.920792079207921">
       </font>
@@ -5199,7 +4907,7 @@ $(pv_value)</tooltip>
     <x>907</x>
     <y>171</y>
     <width>13</width>
-    <height>11</height>
+    <height>10</height>
     <font>
       <font family="Lucida Grande" style="REGULAR" size="7.920792079207921">
       </font>
@@ -5343,9 +5051,9 @@ $(pv_value)</tooltip>
     <name>Action Button</name>
     <actions>
       <action type="write_pv">
+        <description>WritePV</description>
         <pv_name>$(user):GV1:positionC</pv_name>
         <value>0</value>
-        <description>WritePV</description>
       </action>
     </actions>
     <pv_name>$(user):GV1:positionC</pv_name>
@@ -5364,9 +5072,9 @@ $(pv_value)</tooltip>
     <name>Action Button</name>
     <actions>
       <action type="write_pv">
+        <description>WritePV</description>
         <pv_name>$(user):GV1:positionC</pv_name>
         <value>1</value>
-        <description>WritePV</description>
       </action>
     </actions>
     <pv_name>$(user):GV1:positionC</pv_name>
@@ -5381,34 +5089,13 @@ $(pv_value)</tooltip>
     </background_color>
     <border_alarm_sensitive>false</border_alarm_sensitive>
   </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label</name>
-    <text>Temperature</text>
-    <x>36</x>
-    <y>40</y>
-    <width>66</width>
-    <height>14</height>
-    <font>
-      <font family="" style="BOLD" size="9.900990099009901">
-      </font>
-    </font>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <auto_size>true</auto_size>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
-  </widget>
   <widget type="action_button" version="3.0.0">
     <name>Action Button</name>
     <actions>
       <action type="write_pv">
+        <description>Full reset of the Linac</description>
         <pv_name>$(user):initAllSQ</pv_name>
         <value>1</value>
-        <description>WritePV</description>
       </action>
     </actions>
     <text>RESET</text>
@@ -5446,82 +5133,6 @@ $(pv_value)</tooltip>
       <item>Item 2</item>
     </items>
   </widget>
-  <widget type="group" version="3.0.0">
-    <name>Grouping Container</name>
-    <x>242</x>
-    <y>642</y>
-    <width>489</width>
-    <height>44</height>
-    <style>3</style>
-    <foreground_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </foreground_color>
-    <line_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </line_color>
-    <background_color>
-      <color red="235" green="241" blue="181">
-      </color>
-    </background_color>
-    <actions>
-    </actions>
-    <rules>
-      <rule name="Visibility" prop_id="visible" out_exp="false">
-        <exp bool_exp="pv0==0">
-          <value>false</value>
-        </exp>
-        <pv_name>$(user):autoC</pv_name>
-      </rule>
-    </rules>
-    <widget type="rectangle" version="2.0.0">
-      <name>Rectangle</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <width>489</width>
-      <height>44</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="0" green="0" blue="255">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="textupdate" version="2.0.0">
-      <name>Text Update</name>
-      <pv_name>$(user):OP:autoMsg</pv_name>
-      <x>8</x>
-      <y>7</y>
-      <width>475</width>
-      <height>30</height>
-      <font>
-        <font family="Lucida Grande" style="REGULAR" size="17.821782178217823">
-        </font>
-      </font>
-      <background_color>
-        <color red="218" green="218" blue="218">
-        </color>
-      </background_color>
-      <horizontal_alignment>1</horizontal_alignment>
-      <vertical_alignment>1</vertical_alignment>
-      <wrap_words>false</wrap_words>
-      <actions>
-      </actions>
-      <border_color>
-        <color red="0" green="128" blue="255">
-        </color>
-      </border_color>
-    </widget>
-  </widget>
   <widget type="picture" version="2.0.0">
     <name>Image_1</name>
     <file>flame.gif</file>
@@ -5549,7 +5160,7 @@ $(pv_value)</tooltip>
   <widget type="group" version="3.0.0">
     <name>Beam Position Control</name>
     <x>36</x>
-    <y>431</y>
+    <y>474</y>
     <width>950</width>
     <height>207</height>
     <foreground_color>
@@ -5712,7 +5323,9 @@ $(pv_value)</tooltip>
       <actions>
       </actions>
       <tooltip></tooltip>
-      <increment>0.1</increment>
+      <increment>0.01</increment>
+      <minimum>-5.0</minimum>
+      <maximum>5.0</maximum>
     </widget>
     <widget type="label" version="2.0.0">
       <name>Label</name>
@@ -5784,7 +5397,9 @@ $(pv_value)</tooltip>
       <actions>
       </actions>
       <tooltip></tooltip>
-      <increment>0.1</increment>
+      <increment>0.01</increment>
+      <minimum>-5.0</minimum>
+      <maximum>5.0</maximum>
     </widget>
     <widget type="scaledslider" version="2.0.0">
       <name>Scaled Slider</name>
@@ -5810,7 +5425,9 @@ $(pv_value)</tooltip>
       <actions>
       </actions>
       <tooltip></tooltip>
-      <increment>0.1</increment>
+      <increment>0.01</increment>
+      <minimum>-5.0</minimum>
+      <maximum>5.0</maximum>
     </widget>
     <widget type="label" version="2.0.0">
       <name>Label</name>
@@ -6051,7 +5668,8 @@ $(pv_value)</tooltip>
   <widget type="label" version="2.0.0">
     <name>Label_25</name>
     <text>Virtual Linac</text>
-    <x>201</x>
+    <x>195</x>
+    <y>12</y>
     <width>549</width>
     <height>66</height>
     <font>
@@ -6059,7 +5677,7 @@ $(pv_value)</tooltip>
       </font>
     </font>
     <foreground_color>
-      <color red="0" green="0" blue="160">
+      <color name="Header_ForeGround" red="255" green="255" blue="255">
       </color>
     </foreground_color>
     <horizontal_alignment>1</horizontal_alignment>
@@ -6074,7 +5692,8 @@ $(pv_value)</tooltip>
   <widget type="thumbwheel" version="2.0.0">
     <name>Knob</name>
     <pv_name>$(user):cathodeCurrentC</pv_name>
-    <y>215</y>
+    <x>8</x>
+    <y>247</y>
     <width>133</width>
     <height>68</height>
     <background_color>
@@ -6086,32 +5705,11 @@ $(pv_value)</tooltip>
   </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
-    <text>Cathode Current</text>
-    <x>21</x>
-    <y>298</y>
-    <width>83</width>
-    <height>14</height>
-    <font>
-      <font family="Lucida Grande" style="BOLD" size="9.900990099009901">
-      </font>
-    </font>
-    <horizontal_alignment>1</horizontal_alignment>
-    <vertical_alignment>1</vertical_alignment>
-    <auto_size>true</auto_size>
-    <actions>
-    </actions>
-    <border_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </border_color>
-  </widget>
-  <widget type="label" version="2.0.0">
-    <name>Label</name>
-    <text>Control</text>
-    <x>36</x>
-    <y>315</y>
-    <width>37</width>
-    <height>14</height>
+    <text>Cathode Current Control</text>
+    <x>15</x>
+    <y>327</y>
+    <width>126</width>
+    <height>13</height>
     <font>
       <font family="Lucida Grande" style="BOLD" size="9.900990099009901">
       </font>
@@ -6129,7 +5727,7 @@ $(pv_value)</tooltip>
   <widget type="group" version="3.0.0">
     <name>Grouping Container_9</name>
     <x>784</x>
-    <y>346</y>
+    <y>389</y>
     <width>86</width>
     <height>73</height>
     <style>3</style>
@@ -6252,7 +5850,7 @@ $(pv_value)</tooltip>
       <x>69</x>
       <y>55</y>
       <width>15</width>
-      <height>11</height>
+      <height>10</height>
       <font>
         <font family="Lucida Grande" style="REGULAR" size="7.920792079207921">
         </font>
@@ -6273,7 +5871,7 @@ $(pv_value)</tooltip>
       <x>69</x>
       <y>32</y>
       <width>15</width>
-      <height>11</height>
+      <height>10</height>
       <font>
         <font family="Lucida Grande" style="REGULAR" size="7.920792079207921">
         </font>
@@ -6342,7 +5940,7 @@ $(pv_value)</tooltip>
       <x>69</x>
       <y>3</y>
       <width>13</width>
-      <height>11</height>
+      <height>10</height>
       <font>
         <font family="Lucida Grande" style="REGULAR" size="7.920792079207921">
         </font>
@@ -6361,10 +5959,10 @@ $(pv_value)</tooltip>
   <widget type="label" version="2.0.0">
     <name>Label_2</name>
     <text>Beam on Target!</text>
-    <x>877</x>
-    <y>283</y>
-    <width>105</width>
-    <height>82</height>
+    <x>907</x>
+    <y>254</y>
+    <width>86</width>
+    <height>70</height>
     <font>
       <font family="Arial" style="BOLD" size="17.821782178217823">
       </font>
@@ -6403,8 +6001,8 @@ $(pv_value)</tooltip>
   <widget type="choice" version="2.0.0">
     <name>Choice Button</name>
     <pv_name>$(user):gunOnC</pv_name>
-    <x>134</x>
-    <y>369</y>
+    <x>43</x>
+    <y>412</y>
     <width>67</width>
     <height>44</height>
     <background_color>
@@ -6425,19 +6023,15 @@ $(pv_value)</tooltip>
   </widget>
   <widget type="xyplot" version="3.0.0">
     <name>XY Graph</name>
-    <x>140</x>
+    <x>210</x>
     <y>218</y>
-    <width>749</width>
-    <height>59</height>
-    <background_color>
-      <color name="Button_Background" red="210" green="210" blue="210">
-      </color>
-    </background_color>
+    <width>684</width>
+    <height>140</height>
+    <title>Beam orbit</title>
     <title_font>
-      <font family="Arial" style="BOLD" size="11.881188118811881">
+      <font family="Arial" style="BOLD" size="14.0">
       </font>
     </title_font>
-    <show_legend>false</show_legend>
     <actions>
     </actions>
     <x_axis>
@@ -6446,7 +6040,7 @@ $(pv_value)</tooltip>
       <log_scale>false</log_scale>
       <minimum>1.0</minimum>
       <maximum>55.0</maximum>
-      <show_grid>false</show_grid>
+      <show_grid>true</show_grid>
       <title_font>
         <font family="Arial" style="BOLD" size="8.910891089108912">
         </font>
@@ -6455,7 +6049,7 @@ $(pv_value)</tooltip>
         <font family="Lucida Grande" style="REGULAR" size="12.871287128712872">
         </font>
       </scale_font>
-      <visible>false</visible>
+      <visible>true</visible>
     </x_axis>
     <y_axes>
       <y_axis>
@@ -6464,7 +6058,7 @@ $(pv_value)</tooltip>
         <log_scale>false</log_scale>
         <minimum>-4.0</minimum>
         <maximum>4.0</maximum>
-        <show_grid>false</show_grid>
+        <show_grid>true</show_grid>
         <title_font>
           <font family="Arial" style="BOLD" size="8.910891089108912">
           </font>
@@ -6473,8 +6067,8 @@ $(pv_value)</tooltip>
           <font family="Lucida Grande" style="REGULAR" size="12.871287128712872">
           </font>
         </scale_font>
-        <on_right>false</on_right>
-        <visible>false</visible>
+        <on_right>true</on_right>
+        <visible>true</visible>
         <color>
           <color name="Text" red="0" green="0" blue="0">
           </color>
@@ -6495,8 +6089,8 @@ $(pv_value)</tooltip>
         </color>
         <line_width>1</line_width>
         <line_style>0</line_style>
-        <point_type>0</point_type>
-        <point_size>4</point_size>
+        <point_type>2</point_type>
+        <point_size>6</point_size>
         <visible>true</visible>
       </trace>
       <trace>
@@ -6512,7 +6106,7 @@ $(pv_value)</tooltip>
         </color>
         <line_width>1</line_width>
         <line_style>0</line_style>
-        <point_type>2</point_type>
+        <point_type>1</point_type>
         <point_size>6</point_size>
         <visible>true</visible>
       </trace>
@@ -6521,7 +6115,7 @@ $(pv_value)</tooltip>
   <widget type="group" version="3.0.0">
     <name>Grouping Container_7</name>
     <x>506</x>
-    <y>346</y>
+    <y>389</y>
     <width>87</width>
     <height>73</height>
     <style>3</style>
@@ -6644,7 +6238,7 @@ $(pv_value)</tooltip>
       <x>70</x>
       <y>33</y>
       <width>15</width>
-      <height>11</height>
+      <height>10</height>
       <font>
         <font family="Lucida Grande" style="REGULAR" size="7.920792079207921">
         </font>
@@ -6665,7 +6259,7 @@ $(pv_value)</tooltip>
       <x>70</x>
       <y>55</y>
       <width>15</width>
-      <height>11</height>
+      <height>10</height>
       <font>
         <font family="Lucida Grande" style="REGULAR" size="7.920792079207921">
         </font>
@@ -6734,7 +6328,7 @@ $(pv_value)</tooltip>
       <x>70</x>
       <y>3</y>
       <width>13</width>
-      <height>11</height>
+      <height>10</height>
       <font>
         <font family="Lucida Grande" style="REGULAR" size="7.920792079207921">
         </font>
@@ -6753,8 +6347,8 @@ $(pv_value)</tooltip>
   <widget type="textupdate" version="2.0.0">
     <name>Text Update</name>
     <pv_name>$(user):CM1:intensityM</pv_name>
-    <x>143</x>
-    <y>346</y>
+    <x>52</x>
+    <y>389</y>
     <width>51</width>
     <font>
       <font family="Lucida Grande" style="REGULAR" size="15.841584158415841">
@@ -6783,7 +6377,7 @@ $(pv_value)</tooltip>
   <widget type="group" version="3.0.0">
     <name>Grouping Container_8</name>
     <x>644</x>
-    <y>346</y>
+    <y>389</y>
     <width>86</width>
     <height>73</height>
     <style>3</style>
@@ -6906,7 +6500,7 @@ $(pv_value)</tooltip>
       <x>69</x>
       <y>33</y>
       <width>15</width>
-      <height>11</height>
+      <height>10</height>
       <font>
         <font family="Lucida Grande" style="REGULAR" size="7.920792079207921">
         </font>
@@ -6927,7 +6521,7 @@ $(pv_value)</tooltip>
       <x>69</x>
       <y>55</y>
       <width>15</width>
-      <height>11</height>
+      <height>10</height>
       <font>
         <font family="Lucida Grande" style="REGULAR" size="7.920792079207921">
         </font>
@@ -6997,7 +6591,7 @@ $(pv_value)</tooltip>
       <x>69</x>
       <y>3</y>
       <width>13</width>
-      <height>11</height>
+      <height>10</height>
       <font>
         <font family="Lucida Grande" style="REGULAR" size="7.920792079207921">
         </font>
@@ -7014,81 +6608,9 @@ $(pv_value)</tooltip>
     </widget>
   </widget>
   <widget type="group" version="3.0.0">
-    <name>Grouping Container_2</name>
-    <x>521</x>
-    <y>290</y>
-    <width>58</width>
-    <height>57</height>
-    <style>3</style>
-    <foreground_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </foreground_color>
-    <line_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </line_color>
-    <background_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </background_color>
-    <transparent>true</transparent>
-    <actions>
-    </actions>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_1</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <width>50</width>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="128" green="0" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="0" green="0" blue="0">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <x>26</x>
-      <y>21</y>
-      <width>4</width>
-      <height>4</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="128" green="0" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="0">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <scripts>
-        <script file="BeamPosition.js">
-          <pv_name>$(user):PM3:X:positionM</pv_name>
-          <pv_name>$(user):PM3:Y:positionM</pv_name>
-        </script>
-      </scripts>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-  </widget>
-  <widget type="group" version="3.0.0">
     <name>Grouping Container_6</name>
     <x>371</x>
-    <y>346</y>
+    <y>389</y>
     <width>84</width>
     <height>73</height>
     <style>3</style>
@@ -7211,7 +6733,7 @@ $(pv_value)</tooltip>
       <x>67</x>
       <y>33</y>
       <width>15</width>
-      <height>11</height>
+      <height>10</height>
       <font>
         <font family="Lucida Grande" style="REGULAR" size="7.920792079207921">
         </font>
@@ -7232,7 +6754,7 @@ $(pv_value)</tooltip>
       <x>67</x>
       <y>55</y>
       <width>15</width>
-      <height>11</height>
+      <height>10</height>
       <font>
         <font family="Lucida Grande" style="REGULAR" size="7.920792079207921">
         </font>
@@ -7301,7 +6823,7 @@ $(pv_value)</tooltip>
       <x>67</x>
       <y>3</y>
       <width>13</width>
-      <height>11</height>
+      <height>10</height>
       <font>
         <font family="Lucida Grande" style="REGULAR" size="7.920792079207921">
         </font>
@@ -7318,153 +6840,9 @@ $(pv_value)</tooltip>
     </widget>
   </widget>
   <widget type="group" version="3.0.0">
-    <name>Grouping Container_3</name>
-    <x>658</x>
-    <y>290</y>
-    <width>58</width>
-    <height>57</height>
-    <style>3</style>
-    <foreground_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </foreground_color>
-    <line_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </line_color>
-    <background_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </background_color>
-    <transparent>true</transparent>
-    <actions>
-    </actions>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_1</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <width>50</width>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="128" green="0" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="0" green="0" blue="0">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <x>26</x>
-      <y>21</y>
-      <width>4</width>
-      <height>4</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="128" green="0" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="0">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <scripts>
-        <script file="BeamPosition.js">
-          <pv_name>$(user):PM4:X:positionM</pv_name>
-          <pv_name>$(user):PM4:Y:positionM</pv_name>
-        </script>
-      </scripts>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Grouping Container_28</name>
-    <x>247</x>
-    <y>290</y>
-    <width>58</width>
-    <height>57</height>
-    <style>3</style>
-    <foreground_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </foreground_color>
-    <line_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </line_color>
-    <background_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </background_color>
-    <transparent>true</transparent>
-    <actions>
-    </actions>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_1</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <width>50</width>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="128" green="0" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="0" green="0" blue="0">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <x>26</x>
-      <y>21</y>
-      <width>4</width>
-      <height>4</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="128" green="0" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="0">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <scripts>
-        <script file="BeamPosition.js">
-          <pv_name>$(user):PM1:X:positionM</pv_name>
-          <pv_name>$(user):PM1:Y:positionM</pv_name>
-        </script>
-      </scripts>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-  </widget>
-  <widget type="group" version="3.0.0">
     <name>Grouping Container</name>
     <x>233</x>
-    <y>346</y>
+    <y>389</y>
     <width>86</width>
     <height>73</height>
     <style>3</style>
@@ -7587,7 +6965,7 @@ $(pv_value)</tooltip>
       <x>69</x>
       <y>33</y>
       <width>15</width>
-      <height>11</height>
+      <height>10</height>
       <font>
         <font family="Lucida Grande" style="REGULAR" size="7.920792079207921">
         </font>
@@ -7608,7 +6986,7 @@ $(pv_value)</tooltip>
       <x>69</x>
       <y>55</y>
       <width>15</width>
-      <height>11</height>
+      <height>10</height>
       <font>
         <font family="Lucida Grande" style="REGULAR" size="7.920792079207921">
         </font>
@@ -7677,9 +7055,9 @@ $(pv_value)</tooltip>
       <x>69</x>
       <y>3</y>
       <width>13</width>
-      <height>11</height>
+      <height>10</height>
       <font>
-        <font family="Lucida Grande" style="REGULAR" size="7.920792079207921">
+        <font family="Lucida Grande" style="REGULAR" size="8.0">
         </font>
       </font>
       <horizontal_alignment>1</horizontal_alignment>
@@ -7696,10 +7074,10 @@ $(pv_value)</tooltip>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <text>mA</text>
-    <x>196</x>
-    <y>350</y>
+    <x>105</x>
+    <y>393</y>
     <width>13</width>
-    <height>11</height>
+    <height>10</height>
     <font>
       <font family="Lucida Grande" style="REGULAR" size="7.920792079207921">
       </font>
@@ -7714,83 +7092,11 @@ $(pv_value)</tooltip>
       </color>
     </border_color>
   </widget>
-  <widget type="group" version="3.0.0">
-    <name>Grouping Container_4</name>
-    <x>798</x>
-    <y>290</y>
-    <width>58</width>
-    <height>57</height>
-    <style>3</style>
-    <foreground_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </foreground_color>
-    <line_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </line_color>
-    <background_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </background_color>
-    <transparent>true</transparent>
-    <actions>
-    </actions>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_1</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <width>50</width>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="128" green="0" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="0" green="0" blue="0">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <x>26</x>
-      <y>21</y>
-      <width>4</width>
-      <height>4</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="128" green="0" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="0">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <scripts>
-        <script file="BeamPosition.js">
-          <pv_name>$(user):PM5:X:positionM</pv_name>
-          <pv_name>$(user):PM5:Y:positionM</pv_name>
-        </script>
-      </scripts>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-  </widget>
   <widget type="label" version="2.0.0">
     <name>Label</name>
     <text>I</text>
-    <x>130</x>
-    <y>348</y>
+    <x>36</x>
+    <y>392</y>
     <width>8</width>
     <height>14</height>
     <font>
@@ -7805,78 +7111,6 @@ $(pv_value)</tooltip>
       <color red="0" green="128" blue="255">
       </color>
     </border_color>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Grouping Container_1</name>
-    <x>384</x>
-    <y>290</y>
-    <width>58</width>
-    <height>57</height>
-    <style>3</style>
-    <foreground_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </foreground_color>
-    <line_color>
-      <color red="0" green="128" blue="255">
-      </color>
-    </line_color>
-    <background_color>
-      <color red="0" green="0" blue="0">
-      </color>
-    </background_color>
-    <transparent>true</transparent>
-    <actions>
-    </actions>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse_1</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <width>50</width>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="128" green="0" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="0" green="0" blue="0">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
-    <widget type="ellipse" version="2.0.0">
-      <name>Ellipse</name>
-      <macros>
-        <pv_name></pv_name>
-      </macros>
-      <x>26</x>
-      <y>21</y>
-      <width>4</width>
-      <height>4</height>
-      <line_width>0</line_width>
-      <line_color>
-        <color red="128" green="0" blue="255">
-        </color>
-      </line_color>
-      <background_color>
-        <color red="255" green="255" blue="0">
-        </color>
-      </background_color>
-      <actions>
-      </actions>
-      <scripts>
-        <script file="BeamPosition.js">
-          <pv_name>$(user):PM2:X:positionM</pv_name>
-          <pv_name>$(user):PM2:Y:positionM</pv_name>
-        </script>
-      </scripts>
-      <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-    </widget>
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle</name>
@@ -8195,401 +7429,193 @@ $(pv_value)</tooltip>
       <style>3</style>
       <transparent>true</transparent>
       <widget type="group" version="3.0.0">
-        <name>Group_1</name>
+        <name>Grouping Container_5</name>
         <width>106</width>
         <height>8</height>
         <style>3</style>
-        <transparent>true</transparent>
-        <widget type="group" version="3.0.0">
-          <name>Grouping Container_5</name>
-          <width>106</width>
+        <foreground_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </foreground_color>
+        <line_color>
+          <color red="0" green="128" blue="255">
+          </color>
+        </line_color>
+        <background_color>
+          <color red="235" green="241" blue="181">
+          </color>
+        </background_color>
+        <actions>
+        </actions>
+        <widget type="rectangle" version="2.0.0">
+          <name>Rectangle_2</name>
+          <macros>
+            <pv_name></pv_name>
+          </macros>
+          <x>4</x>
+          <width>98</width>
           <height>8</height>
-          <style>3</style>
-          <foreground_color>
-            <color red="0" green="128" blue="255">
-            </color>
-          </foreground_color>
+          <line_width>0</line_width>
           <line_color>
             <color red="0" green="128" blue="255">
             </color>
           </line_color>
           <background_color>
-            <color red="235" green="241" blue="181">
+            <color red="204" green="153" blue="51">
             </color>
           </background_color>
           <actions>
           </actions>
-          <widget type="rectangle" version="2.0.0">
-            <name>Rectangle_2</name>
-            <macros>
-              <pv_name></pv_name>
-            </macros>
-            <x>4</x>
-            <width>98</width>
-            <height>8</height>
-            <line_width>0</line_width>
-            <line_color>
-              <color red="0" green="128" blue="255">
-              </color>
-            </line_color>
-            <background_color>
-              <color red="204" green="153" blue="51">
-              </color>
-            </background_color>
-            <actions>
-            </actions>
-            <tooltip>$(pv_name)
+          <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-          </widget>
-          <widget type="rectangle" version="2.0.0">
-            <name>Rectangle_3</name>
-            <macros>
-              <pv_name></pv_name>
-            </macros>
-            <x>4</x>
-            <width>98</width>
-            <height>6</height>
-            <line_width>0</line_width>
-            <line_color>
-              <color red="0" green="128" blue="255">
-              </color>
-            </line_color>
-            <background_color>
-              <color red="255" green="204" blue="128">
-              </color>
-            </background_color>
-            <actions>
-            </actions>
-            <tooltip>$(pv_name)
+        </widget>
+        <widget type="rectangle" version="2.0.0">
+          <name>Rectangle_3</name>
+          <macros>
+            <pv_name></pv_name>
+          </macros>
+          <x>4</x>
+          <width>98</width>
+          <height>6</height>
+          <line_width>0</line_width>
+          <line_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </line_color>
+          <background_color>
+            <color red="255" green="204" blue="128">
+            </color>
+          </background_color>
+          <actions>
+          </actions>
+          <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-          </widget>
-          <widget type="rectangle" version="2.0.0">
-            <name>Rectangle_4</name>
-            <macros>
-              <pv_name></pv_name>
-            </macros>
-            <x>4</x>
-            <y>1</y>
-            <width>98</width>
-            <height>4</height>
-            <line_width>0</line_width>
-            <line_color>
-              <color red="255" green="230" blue="153">
-              </color>
-            </line_color>
-            <background_color>
-              <color red="255" green="204" blue="102">
-              </color>
-            </background_color>
-            <actions>
-            </actions>
-            <tooltip>$(pv_name)
+        </widget>
+        <widget type="rectangle" version="2.0.0">
+          <name>Rectangle_4</name>
+          <macros>
+            <pv_name></pv_name>
+          </macros>
+          <x>4</x>
+          <y>1</y>
+          <width>98</width>
+          <height>4</height>
+          <line_width>0</line_width>
+          <line_color>
+            <color red="255" green="230" blue="153">
+            </color>
+          </line_color>
+          <background_color>
+            <color red="255" green="204" blue="102">
+            </color>
+          </background_color>
+          <actions>
+          </actions>
+          <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-          </widget>
-          <widget type="rectangle" version="2.0.0">
-            <name>Rectangle_5</name>
-            <macros>
-              <pv_name></pv_name>
-            </macros>
-            <x>3</x>
-            <width>2</width>
-            <height>7</height>
-            <line_width>0</line_width>
-            <line_color>
-              <color red="0" green="128" blue="255">
-              </color>
-            </line_color>
-            <background_color>
-              <color red="0" green="0" blue="255">
-              </color>
-            </background_color>
-            <transparent>true</transparent>
-            <actions>
-            </actions>
-            <tooltip>$(pv_name)
+        </widget>
+        <widget type="rectangle" version="2.0.0">
+          <name>Rectangle_5</name>
+          <macros>
+            <pv_name></pv_name>
+          </macros>
+          <x>3</x>
+          <width>2</width>
+          <height>7</height>
+          <line_width>0</line_width>
+          <line_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </line_color>
+          <background_color>
+            <color red="0" green="0" blue="255">
+            </color>
+          </background_color>
+          <transparent>true</transparent>
+          <actions>
+          </actions>
+          <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-          </widget>
-          <widget type="rectangle" version="2.0.0">
-            <name>Rectangle_6</name>
-            <macros>
-              <pv_name></pv_name>
-            </macros>
-            <y>1</y>
-            <width>3</width>
-            <height>6</height>
-            <line_width>0</line_width>
-            <line_color>
-              <color red="0" green="128" blue="255">
-              </color>
-            </line_color>
-            <background_color>
-              <color red="0" green="0" blue="255">
-              </color>
-            </background_color>
-            <actions>
-            </actions>
-            <tooltip>$(pv_name)
+        </widget>
+        <widget type="rectangle" version="2.0.0">
+          <name>Rectangle_6</name>
+          <macros>
+            <pv_name></pv_name>
+          </macros>
+          <y>1</y>
+          <width>3</width>
+          <height>6</height>
+          <line_width>0</line_width>
+          <line_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </line_color>
+          <background_color>
+            <color red="0" green="0" blue="255">
+            </color>
+          </background_color>
+          <actions>
+          </actions>
+          <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-          </widget>
-          <widget type="rectangle" version="2.0.0">
-            <name>Rectangle_7</name>
-            <macros>
-              <pv_name></pv_name>
-            </macros>
-            <x>101</x>
-            <width>2</width>
-            <height>7</height>
-            <line_width>0</line_width>
-            <line_color>
-              <color red="0" green="128" blue="255">
-              </color>
-            </line_color>
-            <background_color>
-              <color red="0" green="0" blue="255">
-              </color>
-            </background_color>
-            <transparent>true</transparent>
-            <actions>
-            </actions>
-            <tooltip>$(pv_name)
+        </widget>
+        <widget type="rectangle" version="2.0.0">
+          <name>Rectangle_7</name>
+          <macros>
+            <pv_name></pv_name>
+          </macros>
+          <x>101</x>
+          <width>2</width>
+          <height>7</height>
+          <line_width>0</line_width>
+          <line_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </line_color>
+          <background_color>
+            <color red="0" green="0" blue="255">
+            </color>
+          </background_color>
+          <transparent>true</transparent>
+          <actions>
+          </actions>
+          <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-          </widget>
-          <widget type="rectangle" version="2.0.0">
-            <name>Rectangle_8</name>
-            <macros>
-              <pv_name></pv_name>
-            </macros>
-            <x>103</x>
-            <y>1</y>
-            <width>3</width>
-            <height>6</height>
-            <line_width>0</line_width>
-            <line_color>
-              <color red="0" green="128" blue="255">
-              </color>
-            </line_color>
-            <background_color>
-              <color red="0" green="0" blue="255">
-              </color>
-            </background_color>
-            <actions>
-            </actions>
-            <tooltip>$(pv_name)
+        </widget>
+        <widget type="rectangle" version="2.0.0">
+          <name>Rectangle_8</name>
+          <macros>
+            <pv_name></pv_name>
+          </macros>
+          <x>103</x>
+          <y>1</y>
+          <width>3</width>
+          <height>6</height>
+          <line_width>0</line_width>
+          <line_color>
+            <color red="0" green="128" blue="255">
+            </color>
+          </line_color>
+          <background_color>
+            <color red="0" green="0" blue="255">
+            </color>
+          </background_color>
+          <actions>
+          </actions>
+          <tooltip>$(pv_name)
 $(pv_value)</tooltip>
-          </widget>
         </widget>
       </widget>
     </widget>
   </widget>
   <widget type="scaledslider" version="2.0.0">
     <name>Scaled Slider_1</name>
-    <pv_name>timo:BM1:setCurrentC</pv_name>
+    <pv_name>$(user):BM1:setCurrentC</pv_name>
     <x>963</x>
     <y>103</y>
     <width>65</width>
     <height>94</height>
     <horizontal>false</horizontal>
-  </widget>
-  <widget type="group" version="3.0.0">
-    <name>Group_2</name>
-    <x>584</x>
-    <y>159</y>
-    <width>106</width>
-    <height>8</height>
-    <style>3</style>
-    <transparent>true</transparent>
-    <widget type="group" version="3.0.0">
-      <name>Group_3</name>
-      <width>106</width>
-      <height>8</height>
-      <style>3</style>
-      <transparent>true</transparent>
-      <widget type="group" version="3.0.0">
-        <name>Group_4</name>
-        <width>106</width>
-        <height>8</height>
-        <style>3</style>
-        <transparent>true</transparent>
-        <widget type="group" version="3.0.0">
-          <name>Grouping Container_10</name>
-          <width>106</width>
-          <height>8</height>
-          <style>3</style>
-          <foreground_color>
-            <color red="0" green="128" blue="255">
-            </color>
-          </foreground_color>
-          <line_color>
-            <color red="0" green="128" blue="255">
-            </color>
-          </line_color>
-          <background_color>
-            <color red="235" green="241" blue="181">
-            </color>
-          </background_color>
-          <actions>
-          </actions>
-          <widget type="rectangle" version="2.0.0">
-            <name>Rectangle_10</name>
-            <macros>
-              <pv_name></pv_name>
-            </macros>
-            <x>4</x>
-            <width>98</width>
-            <height>8</height>
-            <line_width>0</line_width>
-            <line_color>
-              <color red="0" green="128" blue="255">
-              </color>
-            </line_color>
-            <background_color>
-              <color red="204" green="153" blue="51">
-              </color>
-            </background_color>
-            <actions>
-            </actions>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-          </widget>
-          <widget type="rectangle" version="2.0.0">
-            <name>Rectangle_11</name>
-            <macros>
-              <pv_name></pv_name>
-            </macros>
-            <x>4</x>
-            <width>98</width>
-            <height>6</height>
-            <line_width>0</line_width>
-            <line_color>
-              <color red="0" green="128" blue="255">
-              </color>
-            </line_color>
-            <background_color>
-              <color red="255" green="204" blue="128">
-              </color>
-            </background_color>
-            <actions>
-            </actions>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-          </widget>
-          <widget type="rectangle" version="2.0.0">
-            <name>Rectangle_12</name>
-            <macros>
-              <pv_name></pv_name>
-            </macros>
-            <x>4</x>
-            <y>1</y>
-            <width>98</width>
-            <height>4</height>
-            <line_width>0</line_width>
-            <line_color>
-              <color red="255" green="230" blue="153">
-              </color>
-            </line_color>
-            <background_color>
-              <color red="255" green="204" blue="102">
-              </color>
-            </background_color>
-            <actions>
-            </actions>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-          </widget>
-          <widget type="rectangle" version="2.0.0">
-            <name>Rectangle_13</name>
-            <macros>
-              <pv_name></pv_name>
-            </macros>
-            <x>3</x>
-            <width>2</width>
-            <height>7</height>
-            <line_width>0</line_width>
-            <line_color>
-              <color red="0" green="128" blue="255">
-              </color>
-            </line_color>
-            <background_color>
-              <color red="0" green="0" blue="255">
-              </color>
-            </background_color>
-            <transparent>true</transparent>
-            <actions>
-            </actions>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-          </widget>
-          <widget type="rectangle" version="2.0.0">
-            <name>Rectangle_14</name>
-            <macros>
-              <pv_name></pv_name>
-            </macros>
-            <y>1</y>
-            <width>3</width>
-            <height>6</height>
-            <line_width>0</line_width>
-            <line_color>
-              <color red="0" green="128" blue="255">
-              </color>
-            </line_color>
-            <background_color>
-              <color red="0" green="0" blue="255">
-              </color>
-            </background_color>
-            <actions>
-            </actions>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-          </widget>
-          <widget type="rectangle" version="2.0.0">
-            <name>Rectangle_15</name>
-            <macros>
-              <pv_name></pv_name>
-            </macros>
-            <x>101</x>
-            <width>2</width>
-            <height>7</height>
-            <line_width>0</line_width>
-            <line_color>
-              <color red="0" green="128" blue="255">
-              </color>
-            </line_color>
-            <background_color>
-              <color red="0" green="0" blue="255">
-              </color>
-            </background_color>
-            <transparent>true</transparent>
-            <actions>
-            </actions>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-          </widget>
-          <widget type="rectangle" version="2.0.0">
-            <name>Rectangle_16</name>
-            <macros>
-              <pv_name></pv_name>
-            </macros>
-            <x>103</x>
-            <y>1</y>
-            <width>3</width>
-            <height>6</height>
-            <line_width>0</line_width>
-            <line_color>
-              <color red="0" green="128" blue="255">
-              </color>
-            </line_color>
-            <background_color>
-              <color red="0" green="0" blue="255">
-              </color>
-            </background_color>
-            <actions>
-            </actions>
-            <tooltip>$(pv_name)
-$(pv_value)</tooltip>
-          </widget>
-        </widget>
-      </widget>
-    </widget>
   </widget>
   <widget type="rectangle" version="2.0.0">
     <name>Rectangle</name>
@@ -8636,5 +7662,484 @@ $(pv_value)</tooltip>
     </actions>
     <tooltip>$(pv_name)
 $(pv_value)</tooltip>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update</name>
+    <pv_name>$(user):OP:autoMsg</pv_name>
+    <x>297</x>
+    <y>695</y>
+    <width>475</width>
+    <height>30</height>
+    <font>
+      <font family="Lucida Grande" style="REGULAR" size="17.821782178217823">
+      </font>
+    </font>
+    <background_color>
+      <color red="218" green="218" blue="218">
+      </color>
+    </background_color>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+    <wrap_words>false</wrap_words>
+    <actions>
+    </actions>
+    <border_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </border_color>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>591</x>
+    <y>156</y>
+    <width>2</width>
+    <height>7</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>588</x>
+    <y>157</y>
+    <width>3</width>
+    <height>6</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="rectangle" version="2.0.0">
+    <name>Rectangle</name>
+    <macros>
+      <pv_name></pv_name>
+    </macros>
+    <x>689</x>
+    <y>156</y>
+    <width>2</width>
+    <height>7</height>
+    <line_width>0</line_width>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="0" green="0" blue="255">
+      </color>
+    </background_color>
+    <transparent>true</transparent>
+    <actions>
+    </actions>
+    <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_10</name>
+    <x>585</x>
+    <y>158</y>
+    <width>106</width>
+    <height>8</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="235" green="241" blue="181">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_10</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <x>4</x>
+      <width>98</width>
+      <height>8</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="204" green="153" blue="51">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_11</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <x>4</x>
+      <width>98</width>
+      <height>6</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="255" green="204" blue="128">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_12</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <x>4</x>
+      <y>1</y>
+      <width>98</width>
+      <height>4</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="255" green="230" blue="153">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="255" green="204" blue="102">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_13</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <x>3</x>
+      <width>2</width>
+      <height>7</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_14</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <y>1</y>
+      <width>3</width>
+      <height>6</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_15</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <x>101</x>
+      <width>2</width>
+      <height>7</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_16</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <x>103</x>
+      <y>1</y>
+      <width>3</width>
+      <height>6</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+  </widget>
+  <widget type="group" version="3.0.0">
+    <name>Grouping Container_11</name>
+    <x>722</x>
+    <y>158</y>
+    <width>106</width>
+    <height>8</height>
+    <style>3</style>
+    <foreground_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </foreground_color>
+    <line_color>
+      <color red="0" green="128" blue="255">
+      </color>
+    </line_color>
+    <background_color>
+      <color red="235" green="241" blue="181">
+      </color>
+    </background_color>
+    <actions>
+    </actions>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_17</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <x>4</x>
+      <width>98</width>
+      <height>8</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="204" green="153" blue="51">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_18</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <x>4</x>
+      <width>98</width>
+      <height>6</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="255" green="204" blue="128">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_19</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <x>4</x>
+      <y>1</y>
+      <width>98</width>
+      <height>4</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="255" green="230" blue="153">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="255" green="204" blue="102">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_20</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <x>3</x>
+      <width>2</width>
+      <height>7</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_21</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <y>1</y>
+      <width>3</width>
+      <height>6</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_22</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <x>101</x>
+      <width>2</width>
+      <height>7</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </background_color>
+      <transparent>true</transparent>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+    <widget type="rectangle" version="2.0.0">
+      <name>Rectangle_23</name>
+      <macros>
+        <pv_name></pv_name>
+      </macros>
+      <x>103</x>
+      <y>1</y>
+      <width>3</width>
+      <height>6</height>
+      <line_width>0</line_width>
+      <line_color>
+        <color red="0" green="128" blue="255">
+        </color>
+      </line_color>
+      <background_color>
+        <color red="0" green="0" blue="255">
+        </color>
+      </background_color>
+      <actions>
+      </actions>
+      <tooltip>$(pv_name)
+$(pv_value)</tooltip>
+    </widget>
+  </widget>
+  <widget type="textupdate" version="2.0.0">
+    <name>Text Update_1</name>
+    <pv_name>$(user):cathodeTempM</pv_name>
+    <x>21</x>
+    <y>36</y>
+    <width>107</width>
+    <height>17</height>
+    <font>
+      <font family="Liberation Sans" style="BOLD" size="12.0">
+      </font>
+    </font>
+    <horizontal_alignment>1</horizontal_alignment>
+    <vertical_alignment>1</vertical_alignment>
+  </widget>
+  <widget type="label" version="2.0.0">
+    <name>Label_1</name>
+    <text>BM1</text>
+    <x>951</x>
+    <y>212</y>
+    <width>50</width>
+    <height>24</height>
+    <horizontal_alignment>1</horizontal_alignment>
   </widget>
 </display>
