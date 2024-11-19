@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Procedure>
+    <Plugin>libsequencer-pvxs.$(libext=so)</Plugin>
+    <Plugin>libsequencer-control.$(libext=so)</Plugin>
+    <Sequence>
+        <WaitForVariables varType="PvAccessClient" timeout="5.0"/>
+
+        <Sequence>
+            <Fallback>
+               <GreaterThanOrEqual leftVar="CM1Current.value" rightVar="GunCurrentThr"/>           
+                <Fallback name="CathodeWarm">
+                    <GreaterThanOrEqual leftVar="htrMon.value" rightVar="heaterThr"/>
+                    <Sequence>
+                        <Copy inputVar="false" outputVar="beamOn.value.index" />
+                        <Copy inputVar="heaterSet" outputVar="htr.value" />
+                        <Output fromVar="htrMon.value"/>
+                        <WaitForCondition varNames="htrMon" timeout="1e9">
+                            <GreaterThanOrEqual leftVar="htrMon.value" rightVar="heaterThr"/>
+                        </WaitForCondition>
+                    </Sequence>  
+                </Fallback>
+            </Fallback>
+            <Fallback name="CathodeReady">
+                <Equals leftVar="beamOn.value.index" rightVar="true"/>
+                <Copy inputVar="true" outputVar="beamOn.value.index" />
+            </Fallback>
+        </Sequence>
+        <Output fromVar="htr.value"/>
+    </Sequence>
+    <Workspace>
+        <PvAccessClient name="CM1Current" channel="$(user=test):CM1:intensityM" />
+        <PvAccessClient name="htrMon" channel="$(user=test):cathodeTempM" />
+        <PvAccessClient name="htr" channel="$(user=test)A:cathodeCurrentC" />
+        <PvAccessClient name="beamOn" channel="$(user=test):gunOnC" />
+        <Local name="true" type='{"type":"int32"}' value='true'/>
+        <Local name="false" type='{"type":"int32"}' value='false'/>
+        <Local name="zero" type='{"type":"float64"}' value='0'/>
+        <Local name="State" type='{"type":"int32"}' value='0' />
+        <Local name="Normal" type='{"type":"int32"}' value='1' />
+        <Local name="Ramp" type='{"type":"int32"}' value='0' />
+        <Local name="Init" type='{"type":"int32"}' value='1' />   
+        <Local name="AutoStart" type='{"type":"int32"}' value='1' />  
+        <Local name="Manual" type='{"type":"int32"}' value='0' />       
+        <Local name="waitForAuto" type='{"type":"int32"}' value='1' />
+        <Local name="waitForHtr" type='{"type":"int32"}' value='2' />
+        <Local name="heaterSet" type='{"type":"float64"}' value='12.3'/> 
+        <Local name="heaterThr" type='{"type":"float64"}' value='152.0'/>
+        <Local name="GunCurrentThr" type='{"type":"float64"}' value='10.0'/>
+        <Local name="GunStartMsg" type='{"type":"string"}' value='"Starting e-gun"'/>
+        <Local name="GunReadyMsg" type='{"type":"string"}' value='"e-gun is ready"'/>
+        </Workspace>
+</Procedure>
