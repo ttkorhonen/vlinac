@@ -26,6 +26,7 @@
                 <Copy inputVar="zero" outputVar="v4A.value"/>
                 <Copy inputVar="zero" outputVar="h5A.value"/>
                 <Copy inputVar="zero" outputVar="v5A.value"/>
+                <Copy inputVar="zero" outputVar="Bend.value"/>
 
                 <WaitForCondition varNames="OpMode" timeout="1e9">
                     <Equals leftVar="OpMode.value.index" rightVar="AutoStart"/>
@@ -90,6 +91,7 @@
         <PvAccessClient name="v4A" channel="$(user=test)A:V4:setCurrentC" />
         <PvAccessClient name="h5A" channel="$(user=test)A:H5:setCurrentC" />
         <PvAccessClient name="v5A" channel="$(user=test)A:V5:setCurrentC" />
+        <PvAccessClient name="Bend" channel="$(user=test):BM1:setCurrentC" />
         <Local name="true" type='{"type":"int32"}' value='true'/>
         <Local name="false" type='{"type":"int32"}' value='false'/>
         <Local name="zero" type='{"type":"float64"}' value='0'/>
