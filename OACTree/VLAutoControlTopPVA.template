@@ -7,7 +7,6 @@
         <Repeat maxCount="-1">
             <Sequence>
                 <Sequence name="init">
-                    <Output fromVar="OpMode.value.index"/>
                     <WaitForCondition varNames="OpMode" timeout="1e9">
                         <Equals leftVar="OpMode.value.index" rightVar="Manual"/>
                     </WaitForCondition>
@@ -39,39 +38,50 @@
                     <Repeat maxCount="-1">
                         <Sequence>
                             <IncludeProcedure file="VLGunControl.xml"/>
-                            <Sequence name="Set beam optics">
-                                <Copy inputVar="beamOpticsMsg" outputVar="msg.value"/>
-                                <Wait timeout="1.0"/>
-                                <Copy inputVar="h1Set" outputVar="h1A.value"/>
-                                <Copy inputVar="v1Set" outputVar="v1A.value"/> 
-                                <Wait timeout="1.0"/>
-                                <Copy inputVar="h2Set" outputVar="h2A.value"/>
-                                <Copy inputVar="v2Set" outputVar="v2A.value"/>        
-                                <Wait timeout="1.0"/>
-                            </Sequence>
+                            <Fallback name="Set beam optics, part 1">
+                                <GreaterThanOrEqual leftVar="PM2Int.value" rightVar="PM2GoodCurrent"/>
+                                <Sequence>
+                                    <Copy inputVar="beamOpticsMsg1" outputVar="msg.value"/>
+                                    <Wait timeout="3.0"/>
+                                    <Copy inputVar="h1Set" outputVar="h1A.value"/>
+                                    <Copy inputVar="v1Set" outputVar="v1A.value"/> 
+                                    <Wait timeout="3.0"/>
+                                    <Copy inputVar="h2Set" outputVar="h2A.value"/>
+                                    <Copy inputVar="v2Set" outputVar="v2A.value"/>        
+                                    <Wait timeout="3.0"/>
+                                </Sequence>
+                            </Fallback>
                             <Fallback name="GV open">
                                 <Condition name="GateValve" varName="gv1.value.index"/>
                                 <Sequence>
+                                    <Copy inputVar="GVOpenMsg" outputVar="msg.value"/>
                                     <Copy inputVar="true" outputVar="gv1.value.index"/>
-                                    <Wait timeout="1.0"/>
+                                    <Wait timeout="5.0"/>
                                 </Sequence>
                             </Fallback>
-                            <Sequence>
-                                <Copy inputVar="h3Set" outputVar="h3A.value"/>
-                                <Copy inputVar="v3Set" outputVar="v3A.value"/>        
-                                <Wait timeout="1.0"/>
-                                <Copy inputVar="h4Set" outputVar="h4A.value"/>
-                                <Copy inputVar="v4Set" outputVar="v4A.value"/>        
-                                <Wait timeout="1.0"/>
-                                <Copy inputVar="h5Set" outputVar="h5A.value"/>
-                                <Copy inputVar="v5Set" outputVar="v5A.value"/>  
-                                <Wait timeout="1.0"/>
-                                <Copy inputVar="seqDoneMsg" outputVar="msg.value"/> 
-                            </Sequence>  
+                            <Fallback name="Set beam optics, part 2">
+                                <GreaterThanOrEqual leftVar="PM5Int.value" rightVar="PM5GoodCurrent"/>
+                                <Sequence>
+                                    <Copy inputVar="beamOpticsMsg2" outputVar="msg.value"/>
+                                    <Copy inputVar="h3Set" outputVar="h3A.value"/>
+                                    <Copy inputVar="v3Set" outputVar="v3A.value"/>        
+                                    <Wait timeout="3.0"/>
+                                    <Copy inputVar="h4Set" outputVar="h4A.value"/>
+                                    <Copy inputVar="v4Set" outputVar="v4A.value"/>        
+                                    <Wait timeout="3.0"/>
+                                    <Copy inputVar="h5Set" outputVar="h5A.value"/>
+                                    <Copy inputVar="v5Set" outputVar="v5A.value"/>  
+                                    <Wait timeout="1.0"/>
+                                    <Copy inputVar="seqDoneMsg" outputVar="msg.value"/> 
+                                </Sequence>
+                            </Fallback>  
                             <Condition name="AutoMode" varName="OpMode.value.index"/>
                         </Sequence>
                     </Repeat>
-                    <Message text="Leaving Auto mode"/>
+                    <Sequence>
+                        <Message text="Leaving Auto mode"/>
+                        <Copy inputVar="Normal" outputVar="psMode.value.index"/>
+                    </Sequence>
                 </Fallback>
             </Sequence>
         </Repeat>
@@ -95,6 +105,8 @@
         <PvAccessClient name="h5A" channel="$(user=test)A:H5:setCurrentC" />
         <PvAccessClient name="v5A" channel="$(user=test)A:V5:setCurrentC" />
         <PvAccessClient name="Bend" channel="$(user=test):BM1:setCurrentC" />
+        <PvAccessClient name="PM2Int" channel="$(user=test):PM2:intensityM" />
+        <PvAccessClient name="PM5Int" channel="$(user=test):PM5:intensityM" />
         <Local name="true" type='{"type":"int32"}' value='true'/>
         <Local name="false" type='{"type":"int32"}' value='false'/>
         <Local name="zero" type='{"type":"float64"}' value='0'/>
@@ -118,9 +130,13 @@
         <Local name="v4Set" type='{"type":"float64"}' value='0.1'/>
         <Local name="h5Set" type='{"type":"float64"}' value='-1.83'/>
         <Local name="v5Set" type='{"type":"float64"}' value='2.21'/>
+        <Local name="PM2GoodCurrent" type='{"type":"float64"}' value='10.0'/>
+        <Local name="PM5GoodCurrent" type='{"type":"float64"}' value='8.0'/>
         <Local name="initMsg" type='{"type":"string"}' value='"Initialized"'/>
-        <Local name="beamOpticsMsg" type='{"type":"string"}' value='"Setting beam optics"'/>
+        <Local name="beamOpticsMsg1" type='{"type":"string"}' value='"Setting beam optics, to GV1"'/>
+        <Local name="beamOpticsMsg2" type='{"type":"string"}' value='"Setting beam optics, downstream GV1"'/>
         <Local name="WaitHtrMsg" type='{"type":"string"}' value='"Cathode heating up"'/>
+        <Local name="GVOpenMsg" type='{"type":"string"}' value='"Open Gate Valve"'/>
         <Local name="seqReadyMsg" type='{"type":"string"}' value='"Sequencer ready"'/>
         <Local name="seqStartMsg" type='{"type":"string"}' value='"Starting"'/>
         <Local name="seqDoneMsg" type='{"type":"string"}' value='"Sequence is complete"'/>

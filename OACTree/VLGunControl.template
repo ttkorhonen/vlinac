@@ -13,7 +13,7 @@
                     <Sequence>
                         <Copy inputVar="false" outputVar="beamOn.value.index" />
                         <Copy inputVar="heaterSet" outputVar="htr.value" />
-                        <Output fromVar="htrMon.value"/>
+                        <Copy inputVar="WaitHtrMsg" outputVar="msg.value"/>
                         <WaitForCondition varNames="htrMon" timeout="1e9">
                             <GreaterThanOrEqual leftVar="htrMon.value" rightVar="heaterThr"/>
                         </WaitForCondition>
@@ -22,16 +22,19 @@
             </Fallback>
             <Fallback name="CathodeReady">
                 <Equals leftVar="beamOn.value.index" rightVar="true"/>
-                <Copy inputVar="true" outputVar="beamOn.value.index" />
+                <Sequence>
+                    <Copy inputVar="true" outputVar="beamOn.value.index" />
+                    <Copy inputVar="GunReadyMsg" outputVar="msg.value"/>
+                </Sequence>
             </Fallback>
         </Sequence>
-        <Output fromVar="htr.value"/>
     </Sequence>
     <Workspace>
         <PvAccessClient name="CM1Current" channel="$(user=test):CM1:intensityM" />
         <PvAccessClient name="htrMon" channel="$(user=test):cathodeTempM" />
         <PvAccessClient name="htr" channel="$(user=test)A:cathodeCurrentC" />
         <PvAccessClient name="beamOn" channel="$(user=test):gunOnC" />
+        <PvAccessClient name="msg" channel="$(user=test):OP:autoMsg"/>
         <Local name="true" type='{"type":"int32"}' value='true'/>
         <Local name="false" type='{"type":"int32"}' value='false'/>
         <Local name="zero" type='{"type":"float64"}' value='0'/>
@@ -48,5 +51,6 @@
         <Local name="GunCurrentThr" type='{"type":"float64"}' value='10.0'/>
         <Local name="GunStartMsg" type='{"type":"string"}' value='"Starting e-gun"'/>
         <Local name="GunReadyMsg" type='{"type":"string"}' value='"e-gun is ready"'/>
+        <Local name="WaitHtrMsg" type='{"type":"string"}' value='"Cathode heating up"'/>
         </Workspace>
 </Procedure>
