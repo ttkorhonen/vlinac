@@ -1,5 +1,5 @@
 # vlinac
-APS Virtual Linac for EPICS 7
+APS Virtual Linac for EPICS 7. This repository was created to demostrate basic use of the oac-tree sequencer with EPICS.
 
   Virtual LINAC Demo
   ==================
