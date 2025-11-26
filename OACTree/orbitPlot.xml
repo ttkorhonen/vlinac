@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Procedure name="orbitPlot">
-    <Plugin>libsequencer-ca.dylib</Plugin>
-    <Plugin>libsequencer-control.dylib</Plugin>
+    <Plugin>liboac-tree-ca.dylib</Plugin>
+    <Plugin>liboac-tree-control.dylib</Plugin>
     <Sequence>
         <AddElement inputVar="bpm1_Z" outputVar="bpmLocations"/>
         <AddElement inputVar="bpm2_Z" outputVar="bpmLocations"/>

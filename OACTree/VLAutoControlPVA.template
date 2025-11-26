@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Procedure>
-    <Plugin>libsequencer-pvxs.$(libext=so)</Plugin>
-    <Plugin>libsequencer-control.$(libext=so)</Plugin>
+    <Plugin>liboac-tree-pvxs.$(libext=so)</Plugin>
+    <Plugin>liboac-tree-control.$(libext=so)</Plugin>
     <Sequence>
         <WaitForVariables varType="PvAccessClient" timeout="5.0"/>
         <Repeat maxCount="-1">

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Procedure>
-    <Plugin>libsequencer-ca.dylib</Plugin>
-    <Plugin>libsequencer-control.dylib</Plugin>
+    <Plugin>liboac-tree-ca.dylib</Plugin>
+    <Plugin>liboac-tree-control.dylib</Plugin>
     <Sequence>
         <WaitForVariables varType="ChannelAccessClient" timeout="5.0"/>
         <Repeat maxCount="-1">
